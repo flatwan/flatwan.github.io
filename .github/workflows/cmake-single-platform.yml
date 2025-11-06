@@ -30,4 +30,4 @@ jobs:
         start /b .\CMakeProject1.exe
         timeout /t 5
         taskkill /f /im CMakeProject1.exe
-      shell: pwsh
+      shell: cmd

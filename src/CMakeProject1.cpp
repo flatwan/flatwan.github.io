@@ -22,8 +22,8 @@ int main()
 
 	cout << "test:" << test.x << endl;
 
-	int u = 4;
-	cin >> u; //pour garder la console ouverte
+	//int u = 4;
+	//cin >> u; //pour garder la console ouverte
 	return 0;
 }
 

@@ -1,4 +1,4 @@
-name: test_cmake
+name: CMakeProject1
 
 on:
   push:

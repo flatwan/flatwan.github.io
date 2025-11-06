@@ -419,6 +419,10 @@ FodyWeavers.xsd
 *.msm
 *.msp
 
-# faudrait reussir a regler les exe de con
 *.exe
+
+
+
+#vire moi le build
+out/*
 

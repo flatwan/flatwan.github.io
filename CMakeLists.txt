@@ -46,29 +46,29 @@ CPMAddPackage(
 
 
 #Exemple SFML
-#CPMAddPackage(
-#    NAME SFML
-#    GITHUB_REPOSITORY SFML/SFML
-#    GIT_TAG 3.0.0
-#    OPTIONS
-#        "SFML_BUILD_EXAMPLES OFF"
-#        "SFML_BUILD_TEST_SUITE OFF"
-#        "SFML_BUILD_DOC OFF"
-#        "SFML_SHARED_LIBS ON"
-#        "CMAKE_BUILD_TYPE=${CMAKE_BUILD_TYPE}"
-#        $<$<PLATFORM_ID:Windows>:"SFML_GENERATE_PDB ON">
-#        $<$<AND:$<PLATFORM_ID:Darwin>,$<CONFIG:Release>>:
-#            "CMAKE_INSTALL_PREFIX=/Library/Frameworks"
-#            "SFML_BUILD_FRAMEWORKS ON"
-#        >
-#        $<$<AND:$<PLATFORM_ID:Darwin>,$<CONFIG:Debug>>:
-#            "SFML_BUILD_FRAMEWORKS OFF"
-#        >
-#)
+CPMAddPackage(
+    NAME SFML
+    GITHUB_REPOSITORY SFML/SFML
+    GIT_TAG 3.0.2
+    OPTIONS
+        "SFML_BUILD_EXAMPLES OFF"
+        "SFML_BUILD_TEST_SUITE OFF"
+        "SFML_BUILD_DOC OFF"
+        "SFML_SHARED_LIBS ON"
+        "CMAKE_BUILD_TYPE=${CMAKE_BUILD_TYPE}"
+        $<$<PLATFORM_ID:Windows>:"SFML_GENERATE_PDB ON">
+        $<$<AND:$<PLATFORM_ID:Darwin>,$<CONFIG:Release>>:
+            "CMAKE_INSTALL_PREFIX=/Library/Frameworks"
+            "SFML_BUILD_FRAMEWORKS ON"
+        >
+        $<$<AND:$<PLATFORM_ID:Darwin>,$<CONFIG:Debug>>:
+            "SFML_BUILD_FRAMEWORKS OFF"
+        >
+)
 
 
 
-find_package(SFML 3 REQUIRED COMPONENTS Graphics Window Audio System)
+#find_package(SFML 3 REQUIRED COMPONENTS Graphics Window Audio System)
 
 add_subdirectory(TestLibrary)
 
@@ -77,7 +77,7 @@ add_executable (CMakeProject1 "src/CMakeProject1.cpp" "include/CMakeProject1.h")
 
 target_include_directories(CMakeProject1 PRIVATE "include")
 
-#target_link_libraries(CMakeProject1 PRIVATE TestLibrary SFML::Graphics SFML::Window SFML::Audio SFML::System)
+target_link_libraries(CMakeProject1 PRIVATE SFML::Graphics SFML::Window SFML::Audio SFML::System)
 target_link_libraries(CMakeProject1 PRIVATE TestLibrary Catch2::Catch2WithMain)
 
 

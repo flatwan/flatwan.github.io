@@ -36,12 +36,12 @@ include(${CPM_DOWNLOAD_LOCATION})
 
 
 
-CPMAddPackage(
-	NAME Catch2
-	GITHUB_REPOSITORY CatchOrg/Catch2
-	VERSION 3.6.0
-	OPTIONS "CATCH_BUILD_TESTING OFF"
-)
+#CPMAddPackage(
+#	NAME Catch2
+#	GITHUB_REPOSITORY CatchOrg/Catch2
+#	VERSION 3.6.0
+#	OPTIONS "CATCH_BUILD_TESTING OFF"
+#)
 
 
 
@@ -78,12 +78,13 @@ add_executable (CMakeProject1 "src/CMakeProject1.cpp" "include/CMakeProject1.h")
 target_include_directories(CMakeProject1 PRIVATE "include")
 
 target_link_libraries(CMakeProject1 PRIVATE SFML::Graphics SFML::Window SFML::Audio SFML::System)
-target_link_libraries(CMakeProject1 PRIVATE TestLibrary Catch2::Catch2WithMain)
+target_link_libraries(CMakeProject1 PRIVATE TestLibrary)
+#target_link_libraries(CMakeProject1 PRIVATE Catch2::Catch2WithMain)
 
 
-enable_testing()
-include(${Catch2_SOURCE_DIR}/extras/Catch.cmake)
-CATCH_DISCOVER_TESTS(CMakeProject1)
+#enable_testing()
+#include(${Catch2_SOURCE_DIR}/extras/Catch.cmake)
+#CATCH_DISCOVER_TESTS(CMakeProject1)
 
 
 if (CMAKE_VERSION VERSION_GREATER 3.12)

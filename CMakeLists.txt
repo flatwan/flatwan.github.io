@@ -75,6 +75,8 @@ add_subdirectory(TestLibrary)
 # Ajoutez une source à l'exécutable de ce projet.
 add_executable (CMakeProject1 "src/CMakeProject1.cpp" "include/CMakeProject1.h")
 
+target_include_directories(CMakeProject1 PRIVATE "include")
+
 #target_link_libraries(CMakeProject1 PRIVATE TestLibrary SFML::Graphics SFML::Window SFML::Audio SFML::System)
 target_link_libraries(CMakeProject1 PRIVATE TestLibrary Catch2::Catch2WithMain)
 

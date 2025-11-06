@@ -1,5 +1,0 @@
-add_test( [==[Verifications sur un vector]==] C:/Users/e.nyai/source/repos/CMakeProject1/out/build/x64-Debug/Debug/CMakeProject1.exe [==[Verifications sur un vector]==]  )
-set_tests_properties( [==[Verifications sur un vector]==] PROPERTIES WORKING_DIRECTORY C:/Users/e.nyai/source/repos/CMakeProject1/out/build/x64-Debug)
-add_test( [==[Scenario: On peut additioner a un int]==] C:/Users/e.nyai/source/repos/CMakeProject1/out/build/x64-Debug/Debug/CMakeProject1.exe [==[Scenario: On peut additioner a un int]==]  )
-set_tests_properties( [==[Scenario: On peut additioner a un int]==] PROPERTIES WORKING_DIRECTORY C:/Users/e.nyai/source/repos/CMakeProject1/out/build/x64-Debug)
-set( CMakeProject1_TESTS [==[Verifications sur un vector]==] [==[Scenario: On peut additioner a un int]==])
